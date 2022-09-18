@@ -910,9 +910,9 @@ Konfirmasi pembayaran mu dengan menunjjukan bukti transfer kepada owner!
 				let saking = q.split('|')[1] ? q.split('|')[1] : q
 				let pesan = q.split('|')[2] ? q.split('|')[2] : ''
 				if (pesan.length < 1) return m.reply(`Harus di isi semua! ex : menfess 62831xxxxxxxx|orang|hallo kamu`)
-				 let teksnya = `Hai kak ada Menfess nih!!\n─────────────\n*KuhXD - BOT*\n─────────────\n\nDari : _${saking}_ \nPesan : _${pesan}_ `
+				 let teksnya = `Hai kak ada Menfess nih!!\n─────────────\n*KuhXD - BOT*\n─────────────\n\nDari : _${saking}_ \nPesan : _${pesan}_ \n\n─────────────\nKamu bisa pilih opsi dibawah ingin terima atau kirim`
 				header = 'hayyy'
-					gambar = fs.readFileSync('./lib/menfess.jpeg')
+					gambar = `https://telegra.ph/file/4fda9764fb634c8721cfa.jpg`
 
 				 but = [
 					{ urlButton: { displayText: `Instagram`, url : `https://instagram.com/ramadhankukuh` } },
@@ -920,7 +920,7 @@ Konfirmasi pembayaran mu dengan menunjjukan bukti transfer kepada owner!
                     { quickReplyButton: { displayText: `Terima Menfess`, id: `menfesconfirm ${m.sender}` } },
                     { quickReplyButton: { displayText: `Kirim Menfesmu`, id: `Menfess` } }
                 		]
-					conn.sendMessage(`${nomor}@s.whatsapp.net`, { caption: teksnya, image: {url: fs.readFileSync('./lib/menfess.jpeg')}, templateButtons: but, footer: `Ciee ada yang ngirim pesan nih\n© 2022 KuhXD - BOT` })
+					conn.sendMessage(`${nomor}@s.whatsapp.net`, { caption: teksnya, image: {url: `https://telegra.ph/file/4fda9764fb634c8721cfa.jpg`}, templateButtons: but, footer: `Ciee ada yang ngirim pesan nih\n© 2022 KuhXD - BOT` })
 				m.reply(`Sukses Mengirim Menfess!!`)
 				break
 
