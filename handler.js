@@ -24,6 +24,7 @@ const PhoneNumber = require('awesome-phonenumber');
 const readline = require('readline');
 const { performance } = require('perf_hooks');
 const speed = require('performance-now')
+const crypto = require('crypto')
 const { exec, spawn } = require('child_process');
 const toMs = require("ms")
 global.prem = require("./lib/premium")
@@ -48,6 +49,11 @@ var seconds = Math.floor(seconds % 60);
 return `${pad(hours)} Jam ${pad(minutes)} Menit ${pad(seconds)} Detik`
 }
 
+const createSerial = (size) => {
+	return crypto.randomBytes(size).toString('hex').slice(0, size)
+	}
+  
+	var idtrx = createSerial(6)
 
 module.exports = index = async(conn, m, store, warn) =>{
 try {
@@ -230,9 +236,9 @@ switch(command){
 			case'menu':
 			case'help': {
 				footerr = `Peringatan : Dilarang spam command/apapun ke bot!, dikarena mengakibatkan bot eror!`
-				anu = `${fke}Hi ${m.pushName} 👋, i'am KuhXD - Bot * ${fke}
+				txt = `${fke}Hi ${m.pushName} 👋, i'am KuhXD - Bot * ${fke}
 
-╭──❲ *CRIZZY BOT - MD* ❳
+╭──❲ *KUHXD BOT - MD* ❳
 │
 │ *Info*
 │> *Nama :* _「 ${m.pushName} 」_
@@ -373,7 +379,7 @@ switch(command){
                                 }
                             }]
 
-				conn.send5ButLoc(from, anu, footerr, global.thumb, btn)
+				conn.send5ButLoc(from, txt, footerr, global.thumb, btn)
 				conn.sendMessage(from, {text : `*This is an ad*\n\n•───────────•\n${jsn[0].setting}\n•───────────•\n\n_© 2022 KuhXD - BOT_`}, {quoted :{
 				key: { fromMe: false,
 				participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "628989898299-1589321480@g.us" } : {})},
@@ -384,21 +390,11 @@ switch(command){
 				)
  				 }                      
 				break
-			case 'sc':
-			case 'script':
-			case 'sourcecode':
-			case 'credit':
-			case 'info':{
-				//MASIH LANGKA OM HEHE
-				const _0x337fb1=_0x31eb;function _0x31eb(_0x451bc8,_0x5de346){const _0x115eea=_0x115e();return _0x31eb=function(_0x31ebf4,_0x1f27c6){_0x31ebf4=_0x31ebf4-0x166;let _0x4b4588=_0x115eea[_0x31ebf4];return _0x4b4588;},_0x31eb(_0x451bc8,_0x5de346);}(function(_0x3cea9d,_0x2c4fc4){const _0x5ee033=_0x31eb,_0x1b45d1=_0x3cea9d();while(!![]){try{const _0x442b6b=parseInt(_0x5ee033(0x17a))/0x1*(-parseInt(_0x5ee033(0x17d))/0x2)+parseInt(_0x5ee033(0x178))/0x3+parseInt(_0x5ee033(0x16a))/0x4*(parseInt(_0x5ee033(0x179))/0x5)+parseInt(_0x5ee033(0x170))/0x6*(-parseInt(_0x5ee033(0x166))/0x7)+parseInt(_0x5ee033(0x169))/0x8*(-parseInt(_0x5ee033(0x173))/0x9)+parseInt(_0x5ee033(0x17c))/0xa+-parseInt(_0x5ee033(0x175))/0xb;if(_0x442b6b===_0x2c4fc4)break;else _0x1b45d1['push'](_0x1b45d1['shift']());}catch(_0x227f64){_0x1b45d1['push'](_0x1b45d1['shift']());}}}(_0x115e,0xc4f87));const _0x4714c9=_0x3850;function _0x3850(_0x41782f,_0x1e7787){const _0x28f64a=_0x4dc5();return _0x3850=function(_0x2acaf2,_0x105999){_0x2acaf2=_0x2acaf2-0xe3;let _0x2082b8=_0x28f64a[_0x2acaf2];return _0x2082b8;},_0x3850(_0x41782f,_0x1e7787);}(function(_0x4cfa25,_0x45733f){const _0x2dfc4c=_0x31eb,_0x52a914=_0x3850,_0x1bf574=_0x4cfa25();while(!![]){try{const _0xdac033=-parseInt(_0x52a914(0xea))/0x1*(parseInt(_0x52a914(0xe4))/0x2)+parseInt(_0x52a914(0xee))/0x3+-parseInt(_0x52a914(0xeb))/0x4*(-parseInt(_0x52a914(0xf2))/0x5)+parseInt(_0x52a914(0xe8))/0x6+parseInt(_0x52a914(0xe3))/0x7+parseInt(_0x52a914(0xe6))/0x8*(parseInt(_0x52a914(0xf0))/0x9)+-parseInt(_0x52a914(0xf3))/0xa;if(_0xdac033===_0x45733f)break;else _0x1bf574[_0x2dfc4c(0x17f)](_0x1bf574['shift']());}catch(_0x4873c5){_0x1bf574[_0x2dfc4c(0x17f)](_0x1bf574['shift']());}}}(_0x4dc5,0x50733));function _0x4dc5(){const _0x2ed163=_0x31eb,_0x3763a6=['8432660EGOBKn',_0x2ed163(0x17e),_0x2ed163(0x171),'7900','8afIzaI',_0x2ed163(0x177),_0x2ed163(0x176),_0x2ed163(0x174),_0x2ed163(0x17b),'4hhcskV',_0x2ed163(0x16c),_0x2ed163(0x167),_0x2ed163(0x16b),_0x2ed163(0x16e),_0x2ed163(0x16d),_0x2ed163(0x16f),_0x2ed163(0x168)];return _0x4dc5=function(){return _0x3763a6;},_0x4dc5();}let message={'requestPaymentMessage':{'currencyCodeIso4217':_0x337fb1(0x174),'amount1000':_0x4714c9(0xef),'requestFrom':m[_0x4714c9(0xe7)],'noteMessage':{'extendedTextMessage':{'text':'*SC\x20/\x20CREDITS\x20/\x20INFO*\x0a\x0a*Script\x20:*\x20https://github.com/ramadhankukuh/Crizzy-Bot\x0a*Base\x20:*\x20Base\x20From\x20Hazn\x0a\x0a*Donate\x20:*\x20083102650464\x20(Dana,\x20Shopee\x20Pay,\x20GoPay,\x20OvO)\x0aDont\x20Forget\x20Donate\x0a\x0a*Developer\x20:*\x0a_Fadhil\x20Graphy_\x0a_Affis\x20Junianto_\x0a_Hazn_\x0a\x0a*Thangks\x20To\x20:*\x0a_Ferdi\x20Z_\x0a_FRM\x20Developer_\x0a_DikaArdnt_\x0a_Fatih\x20Arridho_\x0a_Rzky\x20Fdlh_\x0a_Febriansyah\x20XD_\x0a_Arasya_\x0a\x0a*Team\x20:*\x0aPCS\x0aZacros\x0a\x0a','footer':_0x4714c9(0xed),'contextInfo':{'forwardingScore':0x270f,'isForwarded':!![]}}},'expiryTimestamp':_0x4714c9(0xf1),'amount':{'value':_0x4714c9(0xe5),'currencyCode':_0x4714c9(0xe9)}}};function _0x115e(){const _0xd12c53=['117BSIBtY','USD','24235145rSVCvy','2062482aOzyXe','sender','4321767ymSmoA','15LULidQ','785228OpaFWf','2DkFbiy','16042880LLfTBt','2sWgXcs','1611211dPKTjf','push','35HuIiOz','testes','198675eZhlqB','202776zYrHiG','1856444TcpGLg','1103733VKDvGL','relayMessage','2844891VJHjSF','199990','1660787819','374982zsIWos','124876dTSVkM','chat'];_0x115e=function(){return _0xd12c53;};return _0x115e();}conn[_0x4714c9(0xec)](m[_0x337fb1(0x172)],message,{'messageId':generateMessageID()});
-           	 }
-           	 break
 			case 'donasi': 
 					case 'sewabot': 
 					case 'sewa': 
 					case 'buypremium': 
-					case 'donate': 
-					case 'price': {
+					case 'donate': {
 					 let pes = `*Hallo kak, mau invite bot/donasi ya*
 					
 *⚠️ Nomor :*
@@ -474,6 +470,43 @@ Konfirmasi pembayaran mu dengan menunjjukan bukti transfer kepada owner!
 				}
 				}
 				break
+				case 'jadwalbioskop': {
+					if (!q) throw `Example: ${prefix + command} jakarta`
+					let { bioskop } = require('@bochilteam/scraper')
+					const res = await bioskop(`${q}`).catch(e => {m.reply('Error, Atau Tidak Ada Jadwal Bioskop Yang Tersedia')})
+					let capt = `Jadwal Bioskop From : ${q}\n\n`
+					capt += `⭔ Title: ${res[0].title}\n`
+					capt += `⭔ Genre: ${res[0].genre}\n`
+					capt += `⭔ Durasi: ${res[0].duration}\n`
+					capt += `⭔ Rilis: ${res[0].release}\n`
+					capt += `⭔ Director: ${res[0].director}\n`
+					capt += `⭔ Cast: ${res[0].cast}\n`
+					capt += `⭔ Thumbnail: ${res[0].img}\n`
+					capt += `⭔ Url: ${res[0].url}\n\n──────────────────────\n`
+					but = [
+						{ urlButton: { displayText: `Instagram`, url : `https://instagram.com/ramadhankukuh` } },
+						{ urlButton: { displayText: `Website`, url : `https://ramadhankukuh.my.id` } },
+							]
+						conn.sendMessage(from, { caption: capt, image: {url: res[0].img}, templateButtons: but, footer: `© 2022 KuhXD - BOT` })
+					}
+					break
+					case 'nowplayingbioskop': {
+					let { bioskopNow } = require('@bochilteam/scraper')
+					const res = await bioskopNow().catch(e => {m.reply('Error, Atau Tidak Ada Jadwal Bioskop Yang Tersedia')})
+					let capt = `Sedang Tayang\n\n`
+					capt += `⭔ Title: ${res[0].title}\n`
+					capt += `⭔ Genre: ${res[0].genre}\n`
+					capt += `⭔ Durasi: ${res[0].duration}\n`
+					capt += `⭔ Playing At: ${res[0].playingAt}\n`
+					capt += `⭔ Thumbnail: ${res[0].img}\n`
+					capt += `⭔ Url: ${res[0].url}\n\n──────────────────────\n`
+					but = [
+						{ urlButton: { displayText: `Instagram`, url : `https://instagram.com/ramadhankukuh` } },
+						{ urlButton: { displayText: `Website`, url : `https://ramadhankukuh.my.id` } },
+							]
+						conn.sendMessage(from, { caption: capt, image: {url: res[0].img}, templateButtons: but, footer: `© 2022 KuhXD - BOT` })
+					}
+					break
 			case 'tes':{
 				//if (!isPremium) return m.reply('premium only')
 				m.reply('affah iyh')
@@ -518,212 +551,6 @@ Konfirmasi pembayaran mu dengan menunjjukan bukti transfer kepada owner!
 				}
 				m.reply(`Iklan sukses diganti menjadi : *${jsn[0].setting}*`)
 				break
-			case 'order':
-			case 'caraorder': {
-				if (m.isGroup) return m.reply('Fitur Tidak Dapat Digunakan Untuk Group!')
-				let capp = `*Hallo _${m.pushName}_ Berikut Cara Order*\n\n*Followers :*\nex1 : _${prefix}followers jumlah|target [ tanpa (@) ]_\nex2 : _${prefix}followers 500|ramadhankukuh_\n\n*View :*\nex 1 : _${prefix}view jumlah|link_\nex 2 : _${prefix}view 10000|https://vm.tiktok.com/xxxxxxx_\n\n*Like :*\nex 1 : _${prefix}like jumlah|link_\nex 2 : _${prefix}like 10000|https://www.instagram.com/p/xxxxxxx_\n\nSekian penjelasan cara order\nSemoga anda faham dengan penjelasan ini🙏\nbeli = faham`
-				conn.sendMessage(from, {text: capp}, {quoted:m})
-				}
-				break
-			case 'followers': case 'follower': {
-				if (m.isGroup) return m.reply('Fitur Tidak Dapat Digunakan Untuk Group!')
-				if (args.length < 1) return m.reply(`Link atau Usernamenya mana?`)
-				let juma = q.split('|')[0] ? q.split('|')[0]: q
-				let targtt = q.split('|')[1] ? q.split('|')[1]: ''
-				if (targtt.length < 1) return m.reply(`Jumlah dan Target harus di isi!`)
-
-				fetaa = await fetchJson(`https://ampibismm.my.id/api/json?bot=true&api_key=${global.ApiKey}&action=pricelist&type=follower`)
-				list = []
-					textplus = `${juma}|${targtt}`
-					for (let L of fetaa.data) {
-					list.push({
-    					title: `*${L.nama}*`,
-    					rowId: `confirmorderkunci ${textplus}|${L.id_layanan}`,
-    					description: `\n${L.desc}`
-  					})
-				}
-				let nyobb = [{
-  				title: "Sosmed Store",
-  				rows: list
-				},
-				]
-				conn.sendListMsg(from, `Pilih layanan sesuai dengan yang ingin anda beli!\njika anda membeli followers maka pilih followers\ndiharapkan anda sudah faham.`, `© 2022\nKukuh (owner bot)\nAffis Junianto (owner smm)`, `Hallo, Berikut layanan kami`, `Click Here`, nyobb, m)
-				}
-				break
-			case 'view': {
-				if (m.isGroup) return m.reply('Fitur Tidak Dapat Digunakan Untuk Group!')
-				if (args.length < 1) return m.reply(`Link atau Usernamenya mana?`)
-				let jumlahh = q.split('|')[0] ? q.split('|')[0]: q
-				let targett = q.split('|')[1] ? q.split('|')[1]: ''
-				if (targett.length < 1) return m.reply(`Jumlah dan Target harus di isi!`)
-
-				fetaa = await fetchJson(`https://ampibismm.my.id/api/json?bot=true&api_key=${global.ApiKey}&action=pricelist&type=view`)
-				list = []
-					textplus = `${jumlahh}|${targett}`
-					for (let L of fetaa.data) {
-					list.push({
-    					title: `*${L.nama}*`,
-    					rowId: `confirmorderkunci ${textplus}|${L.id_layanan}`,
-    					description: `\n${L.desc}`
-  					})
-				}
-				let nyobb = [{
-  				title: "Sosmed Store",
-  				rows: list
-				},
-				]
-				conn.sendListMsg(from, `Pilih layanan sesuai dengan yang ingin anda beli!\njika anda membeli followers maka pilih followers\ndiharapkan anda sudah faham.`, `© 2022\nKukuh (owner bot)\nAffis Junianto (owner smm)`, `Hallo, Berikut layanan kami`, `Click Here`, nyobb, m)
-				}
-				break
-			case 'like':{
-				if (m.isGroup) return m.reply('Fitur Tidak Dapat Digunakan Untuk Group!')
-				if (args.length < 1) return m.reply(`Link atau Usernamenya mana?`)
-				let jumlahhh = q.split('|')[0] ? q.split('|')[0]: q
-				let targettt = q.split('|')[1] ? q.split('|')[1]: ''
-				if (targettt.length < 1) return m.reply(`Jumlah dan Target harus di isi!`)
-
-				fetaa = await fetchJson(`https://ampibismm.my.id/api/json?bot=true&api_key=${global.ApiKey}&action=pricelist&type=like`)
-				list = []
-					textplus = `${jumlahhh}|${targettt}`
-					for (let L of fetaa.data) {
-					list.push({
-    					title: `*${L.nama}*`,
-    					rowId: `confirmorderkunci ${textplus}|${L.id_layanan}`,
-    					description: `\n${L.desc}`
-  					})
-				}
-				let nyobb = [{
-  				title: "Sosmed Store",
-  				rows: list
-				},
-				]
-				conn.sendListMsg(from, `Pilih layanan sesuai dengan yang ingin anda beli!\njika anda membeli followers maka pilih followers\ndiharapkan anda sudah faham.`, `© 2022\nKukuh (owner bot)\nAffis Junianto (owner smm)`, `Hallo, Berikut layanan kami`, `Click Here`, nyobb, m)
-				}
-				break
-			case 'confirmorderkunci': { //KUNCI = BIAR GA DIAKSES HEHE
-				if (m.isGroup) return m.reply('Fitur Tidak Dapat Digunakan Untuk Group!')
-				if (args.length < 1) return m.reply(`*Cara order followers*\n\n*Example :* _${prefix + command} jumlah|username tanpa (@)_\n*Example :* _${prefix + command} 500|ramadhankukuh_\n\n*Min pesan :* _300_ \n*Max pesan :* _500k_\n\nThank You`)
-				let jumlah = q.split('|')[0] ? q.split('|')[0]: q
-				let targ = q.split('|')[1] ? q.split('|')[1]: ''
-				let idny = q.split('|')[2] ? q.split('|')[2]: ''
-
-				feta = await fetchJson(`https://ampibismm.my.id/api/json?bot=true&api_key=${global.ApiKey}&action=order&quantity=${jumlah}&target=${targ}&id_layanan=${idny}`)
-				if (feta.status == false) {
-  				m.reply(`*Maaf orderan gagal di buat*\n\nPermasalahan :\n${feta.data.msg} atau Cara order anda salah\n\nDiharapkan sudah faham jika ingin membeli\njika masih tidak faham silahkan ketik ${prefix}owner!\n`)
-				} else {
-  				let idpes = feta.data.order_id
-  				let cap = `Hay *${m.pushName} 👋,* Terimakasih Telah Order di Sosmed Shop!\nScan QR diatas untuk membayar! MENGGUNAKAN QRIS.\n\n*Id Pesanan Anda :* ${feta.data.order_id}\n*Target :* ${targ}\n*Jumlah Pesanan :* ${jumlah}\n*Total Harga Pesanan :* Rp ${feta.data.amount}\n*Status Orderan :* ${feta.data.status}\n\n_Info lebih lanjut klik button dibawah._`
-  				buto = [{
-    				buttonId: `cekstatus ${feta.data.order_id}`,
-    				buttonText: {
-      				displayText: 'Check Status'
-    				},
-    				type: 1
-  				}]
-  				conn.sendMessage(from, {
-    				caption: cap, image: {
-      				url: feta.data.qris
-    				}, buttons: buto, footer: `© 2022\nKukuh\nAffis Junianto`
-  				})
-				}
-				console.log(feta)
-				}
-				break
-			case 'listharga':
-			case 'prichlist':
-			case 'pricelist': {
-				feta = await fetchJson(`https://ampibismm.my.id/api/json?bot=true&api_key=${global.ApiKey}&action=pricelist&type=semua`)
-				list = '*List Harga Layanan*\n\n'
-				for (let L of feta.data) {
- 				 list += `name : ${L.nama}\ndesc : ${L.desc}\nmin : ${L.min}\nmax : ${L.max}\nharga : ${L.price}\nid : ${L.id_layanan}\n\n`
-				}
-				conn.sendMessage(from, {text: list}, {quoted:m})
-				console.log(feta)
-				}
-				break
-			case 'chekstatus':
-			case 'cekstatus': {
-				if (m.isGroup) return m.reply('Fitur Tidak Dapat Digunakan Untuk Group!')
-				if (args.length < 1) return m.reply('idnya mana bang')
-				seta = await fetchJson(`https://ampibismm.my.id/api/json?bot=true&api_key=${global.ApiKey}&action=status&order_id=${q}`)
-				//console.log(seta)
-				if (seta.status == false) {
-  				var captionnye = `\nid order tidak di temukan`
-				} else {
-  				var captionnye = `\n*Status Orderan Anda*\n\nTarget : ${seta.data.target}\nStatus : ${seta.data.status}\nFollowers Default : ${seta.data.start_count}\nOn Process : ${seta.data.kurang}\nTotal Order : ${seta.data.total_order}\nTanggal Pesan : ${seta.data.tanggal_pesan}\nJumlah Pembayaran : ${seta.data.amount}\nId Pesanan : ${seta.data.order_id}\n\nTerimakasih sudah membeli followers dari kami, ditunggu next ordernya!`
-				}
-				var copynye = `${q}`
-				const menuButa = [{
-  				index: 1,
-  				urlButton: {
-    				displayText: `Copy Here`,
-    				url: 'https://www.whatsapp.com/otp/copy/'+copynye
-  				}},
-				{urlButton: {
-    				displayText: `Panel Smm`,
-    				url: 'https://ampibismm.my.id'
-  				}},
-  				{
-    				quickReplyButton: {
-      				displayText: `Check Status Again`,
-      			id: `cekstatus ${q}`
-    				}
-  				},
-				]
-				await conn.sendMessage(from, {
-  				text: `${captionnye}`, templateButtons: menuButa, footer: `Copy id pesanan anda dibawah ini\n\nampibismm.my.id\n© 2022 Kukuh`
-				}, {
-  				quoted: m
-				})
-				}
-				break
-			case 'komisi':
-				if (!isCreator) return m.reply(act.owner)
-				komisi = await fetchJson(`http://ampibismm.my.id/api/json?bot=true&action=profile&api_key=${global.ApiKey}`)
-				let reskomisi = `Hallo owner Berikut komisi anda\n\n*Name :* ${komisi.data.name}\n*Full Name :* ${komisi.data.full_name}\n*Komisi :* ${komisi.data.komisi}`
-				conn.sendMessage(from, {text: reskomisi }, {quoted:fake})
-				break
-			case 'tk': case 'tarikkomisi': {
-				if (!isCreator) return m.reply(act.owner)
-				//if (m.isGroup) return m.reply('Fitur Tidak Dapat Digunakan Untuk Group!')
-				if (args.length < 1) return m.reply(`jumlahnya berapa? min 10000`)
-				fetaa = await fetchJson(`https://ampibismm.my.id/api/json?bot=true&api_key=${global.ApiKey}&action=listwallet`)
-				list = []
-					for (let L of fetaa.data) {
-					let no = 1
-					list.push({
-    					buttonText: {displayText: L.wallet},
-    					buttonId: `tarikkomisikunci ${q}|${L.wallet}`,
-    					type: `${no++}`
-  					})
-				}
-				let nyobb = list
-				conn.sendMessage(from, {text:`*PILLIH E-WALLET*\nPilih jenis wallet yang ingin anda gunakan!`, title: 'WALLET', footer: '© 2022 Kukuh', buttons: nyobb})
-				}
-				break
-			case 'tarikkomisikunci':
-				if (!isCreator) return m.reply(act.owner)
-				if (args.length < 1) return m.reply('jumlahnya berapa bang')
-				let juml = q.split('|')[0] ? q.split('|')[0]: q
-				let walle = q.split('|')[1] ? q.split('|')[1]: ''
-				if (walle.length < 1) return m.reply(`Jumlah dan Target harus di isi!`)
-				tarikom = await fetchJson(`https://ampibismm.my.id/api/json?bot=true&api_key=${global.ApiKey}&action=withdraw&amount=${juml}&wallet=${walle}&nomor=${smm.nomor}&an=${smm.atasnama}`)
-				conn.sendMessage(from, {text: `${tarikom.data.msg}`}, {quoted:m})
-				break
-			/*case'reg':
-			case'log':
-				if(isReg) return m.reply('*Your Already Create Account*')
-				tokens = Math.floor(Math.random() * 100)
-				fs.writeFileSync(`./temp/token_${senderName}.json`,JSON.stringify(tokens))
-				name = body.slice(4)
-				email = body.slice(4)
-				reg = name.split('|')[0]
-				regas = email.split('|')[0]
-				regis.push(sender)
-				fs.writeFileSync('./database/reg.json',JSON.stringify(regis))
-				m.reply(`*Success*\n\n*Follow Intruction In Private Chat*\n\n*Name*: ${name}\n*Password*: **********g`)
-				conn.sendMessage(`${sender.split("@")[0]}@s.whatsapp.net`,'*Token*: '+ '\n\n*type : .login <token>*')
-				break*/
 			case 'owner':
 			case 'creator': {
                 conn.sendContact(from, global.owner, m)
@@ -880,6 +707,31 @@ Konfirmasi pembayaran mu dengan menunjjukan bukti transfer kepada owner!
                 conn.sendMessage(from, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `⭔ Title : ${media.title}\n⭔ File Size : ${media.filesizeF}\n⭔ Url : ${isUrl(text)}\n⭔ Ext : MP3\n⭔ Resolusi : ${args[1] || '360p'}` }, { quoted: m })
                 }
                 break
+				case 'imagenobg': case 'removebg': case 'remove-bg': {
+					if (!quoted) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
+					if (!/image/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
+					if (/webp/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
+					let remobg = require('remove.bg')
+					let apirnobg = ['q61faXzzR5zNU6cvcrwtUkRU','S258diZhcuFJooAtHTaPEn4T','5LjfCVAp4vVNYiTjq9mXJWHF','aT7ibfUsGSwFyjaPZ9eoJc61','BY63t7Vx2tS68YZFY6AJ4HHF','5Gdq1sSWSeyZzPMHqz7ENfi8','86h6d6u4AXrst4BVMD9dzdGZ','xp8pSDavAgfE5XScqXo9UKHF','dWbCoCb3TacCP93imNEcPxcL']
+					let apinobg = apirnobg[Math.floor(Math.random() * apirnobg.length)]
+					hmm = await './src/remobg-'+getRandom('')
+					localFile = await conn.downloadAndSaveMediaMessage(quoted, hmm)
+					outputFile = await './src/hremo-'+getRandom('.png')
+					m.reply('Loading. . .')
+					remobg.removeBackgroundFromImageFile({
+					  path: localFile,
+					  apiKey: apinobg,
+					  size: "regular",
+					  type: "auto",
+					  scale: "100%",
+					  outputFile 
+					}).then(async result => {
+					conn.sendMessage(m.chat, {image: fs.readFileSync(outputFile), caption: 'Success'}, { quoted : m })
+					await fs.unlinkSync(localFile)
+					await fs.unlinkSync(outputFile)
+					})
+					}
+					break
 			case 'ytmp3':
 			case 'ytaudio': {
                 let { yta } = require('./lib/y2mate')
@@ -923,6 +775,26 @@ Konfirmasi pembayaran mu dengan menunjjukan bukti transfer kepada owner!
 					conn.sendMessage(`${nomor}@s.whatsapp.net`, { caption: teksnya, image: {url: `https://telegra.ph/file/4fda9764fb634c8721cfa.jpg`}, templateButtons: but, footer: `Ciee ada yang ngirim pesan nih\n© 2022 KuhXD - BOT` })
 				m.reply(`Sukses Mengirim Menfess!!`)
 				break
+
+				case 'trxgame':
+					if (m.isGroup) return m.reply('Fitur Tidak Dapat Digunakan Untuk Group!')
+					if (!text) return m.reply(`*Cara Penggunaan*\n\nKirim perintah *${prefix}${command} nomer|pengirim|pesan*\n\nContoh *${prefix}${command} 62831xxxxxxx|ini nama samaran ya|I have a crush on you*\n\nContoh 2 : *${prefix}${command} 62831xxxxxxx|crush mu|I have s crush on you*\n\nTenang aja privasi aman kok. ga kayak komin**><`)
+					let no = q.split('|')[0] ? q.split('|')[0] : q
+					let chat = q.split('|')[1] ? q.split('|')[1] : q
+					if (chat.length < 1) return m.reply(`Harus di isi semua! ex : menfess 628xxxxxxxx|orderan`)
+					 let anu = `Halo Kak ${m.pushName} Berikut Detail Transaksi Kamu\n\nNo Invoice : ${idtrx}\n\n${chat}`
+					header = 'hayyy'
+						gambar = `https://telegra.ph/file/018d277caed5db9af2e7a.jpg`
+						footer = `BOT TRANSAKSI OTOMATIS BY KUKUH`
+
+					 but = [
+						{ urlButton: { displayText: `Instagram`, url : `https://instagram.com/ramadhankukuh` } },
+						{ urlButton: { displayText: `Website`, url : `https://ramadhankukuh.my.id/topup` } },
+						{ quickReplyButton: { displayText: `Customer Service`, id: `owner` } }
+							]
+							conn.send5ButLoc(`${no}@s.whatsapp.net`, anu, footer, gambar, but)
+					m.reply(`Sukses Mengirim Menfess!!`)
+					break
 
 			case 'menfesconfirm':
  				 conn.sendMessage(q, {text: `Sudah Di Confirmasi Nih Menfess nyaa🤭`})

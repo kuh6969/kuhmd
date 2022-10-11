@@ -1,1 +1,1 @@
-worker : npm i ffmpeg && npm i @bochilteam/scraper && npm install && npm start
+worker : npm i ffmpeg && npm install && npm start
