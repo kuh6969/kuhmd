@@ -735,7 +735,7 @@ Konfirmasi pembayaran mu dengan menunjjukan bukti transfer kepada owner!
 			case 'ytmp3':
 			case 'ytaudio': {
                 let { yta } = require('./lib/y2mate')
-                if (!text) return m.reply(`Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`)
+                if (!text) return m.reply(`Example : ${prefix + command} https://youtube.com/watch?v=xxx 128kbps`)
                 let quality = args[1] ? args[1] : '128kbps'
                 let media = await yta(text, quality)
                 if (media.filesize >= 100000) return m.reply('File Melebihi Batas '+util.format(media))
@@ -745,7 +745,7 @@ Konfirmasi pembayaran mu dengan menunjjukan bukti transfer kepada owner!
             case 'ytmp4':
 			case 'ytvideo': {
                 let { ytv } = require('./lib/y2mate')
-                if (!text) return m.reply(`Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 360p`)
+                if (!text) return m.reply(`Example : ${prefix + command} https://youtube.com/watch?v=xxx 360p`)
                 let quality = args[1] ? args[1] : '360p'
                 let media = await ytv(text, quality)
                 if (media.filesize >= 100000) return m.reply('File Melebihi Batas '+util.format(media))
@@ -793,8 +793,28 @@ Konfirmasi pembayaran mu dengan menunjjukan bukti transfer kepada owner!
 						{ quickReplyButton: { displayText: `Customer Service`, id: `owner` } }
 							]
 							conn.send5ButLoc(`${no}@s.whatsapp.net`, anu, footer, gambar, but)
-					m.reply(`Sukses Mengirim Menfess!!`)
+					m.reply(`Sukses Mengirim Invoice!!`)
 					break
+
+					case 'pengumumanbot':
+						if (m.isGroup) return m.reply('Fitur Tidak Dapat Digunakan Untuk Group!')
+						if (!text) return m.reply(`*Cara Penggunaan*\n\nKirim perintah *${prefix}${command} nomer|pengirim|pesan*\n\nContoh *${prefix}${command} 62831xxxxxxx|ini nama samaran ya|I have a crush on you*\n\nContoh 2 : *${prefix}${command} 62831xxxxxxx|crush mu|I have s crush on you*\n\nTenang aja privasi aman kok. ga kayak komin**><`)
+						let n = q.split('|')[0] ? q.split('|')[0] : q
+						let c = q.split('|')[1] ? q.split('|')[1] : q
+						if (c.length < 1) return m.reply(`Harus di isi semua! ex : pengumumanbot 628xxxxxxxx|pengumuman`)
+						 let a = `${c}`
+						header = 'hayyy'
+							gambar = `https://telegra.ph/file/3e6570b149771d3b5fd7a.jpg`
+							footer = `BOT ANNOUNCEMENT`
+	
+						 but = [
+							{ urlButton: { displayText: `Instagram`, url : `https://instagram.com/ramadhankukuh` } },
+							{ urlButton: { displayText: `Website`, url : `https://ramadhankukuh.my.id/topup` } },
+							{ quickReplyButton: { displayText: `Customer Service`, id: `owner` } }
+								]
+								conn.send5ButLoc(`${n}@s.whatsapp.net`, a, footer, gambar, but)
+						m.reply(`Sukses Mengirim ANNOUNCEMENT!!`)
+						break
 
 			case 'menfesconfirm':
  				 conn.sendMessage(q, {text: `Sudah Di Confirmasi Nih Menfess nyaa🤭`})
